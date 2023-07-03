@@ -7,6 +7,6 @@ import androidx.room.RoomDatabase
     entities = [ShoppingItem::class],
     version = 1
 )
-abstract class ShoppingDatabase: RoomDatabase() {
+abstract class ShoppingDatabase : RoomDatabase() {
     abstract fun shoppingDao(): ShoppingDao
 }

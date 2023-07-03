@@ -24,7 +24,7 @@ class AddShoppingItemFragment : Fragment(R.layout.fragment_add_shopping_item) {
             )
         }
 
-        val callback = object : OnBackPressedCallback(true){
+        val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 viewModel.setCurImageUrl("")
                 findNavController().popBackStack()

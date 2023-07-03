@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import com.jakchang.tdd_study.data.local.ShoppingItem
 import com.jakchang.tdd_study.data.remote.response.ImageResponse
 import com.jakchang.tdd_study.other.Resource
-import retrofit2.Response
 
 interface ShoppingRepository {
     suspend fun insertShoppingItem(shoppingItem: ShoppingItem)

@@ -6,5 +6,4 @@ import org.junit.Rule
 class ShoppingRepositoryTest {
     @get:Rule
     val instantExecutorRule = InstantTaskExecutorRule()
-
 }

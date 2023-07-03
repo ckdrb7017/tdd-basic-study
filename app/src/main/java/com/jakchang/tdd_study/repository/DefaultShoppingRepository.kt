@@ -31,14 +31,14 @@ class DefaultShoppingRepository @Inject constructor(
     override suspend fun searchForImage(imageQuery: String): Resource<ImageResponse> {
         return try {
             val response = pixabayAPI.searchForImage(imageQuery)
-            if(response.isSuccessful){
+            if (response.isSuccessful) {
                 response.body()?.let {
                     return@let Resource.success(it)
                 } ?: Resource.error("unknown error", null)
             } else {
                 Resource.error("unknown error", null)
             }
-        }catch (e: Exception){
+        } catch (e: Exception) {
             Resource.error("unknown error", null)
         }
     }
