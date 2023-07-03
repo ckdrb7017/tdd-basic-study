@@ -26,12 +26,12 @@ class ShoppingFragmentTest {
     var hiltRule = HiltAndroidRule(this)
 
     @Before
-    fun setup(){
+    fun setup() {
         hiltRule.inject()
     }
 
     @Test
-    fun clickAddShoppingItemButton_navigateToAddShoppingItemFragment(){
+    fun clickAddShoppingItemButton_navigateToAddShoppingItemFragment() {
         val navController = mock(NavController::class.java)
         // 아래 메소드가 호출
 //        `when`(navController.popBackStack()).thenReturn(false)

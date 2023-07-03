@@ -24,12 +24,12 @@ class AddShoppingItemFragmentTest {
     var hiltRule = HiltAndroidRule(this)
 
     @Before
-    fun setup(){
+    fun setup() {
         hiltRule.inject()
     }
 
     @Test
-    fun pressBackButton_popBackStack(){
+    fun pressBackButton_popBackStack() {
         val navController = mock(NavController::class.java)
         launchFragmentInHiltContainer<AddShoppingItemFragment> {
             Navigation.setViewNavController(requireView(), navController)

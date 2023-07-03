@@ -1,6 +1,5 @@
 package com.jakchang.tdd_study.data.remote.response
 
-
 import com.google.gson.annotations.SerializedName
 
 data class ImageResult(

@@ -4,19 +4,16 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import com.jakchang.tdd_study.data.getOrAwaitValue
-import com.jakchang.tdd_study.launchFragmentInHiltContainer
-import com.jakchang.tdd_study.ui.ShoppingFragment
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
+import javax.inject.Inject
+import javax.inject.Named
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import javax.inject.Inject
-import javax.inject.Named
-
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @SmallTest

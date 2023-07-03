@@ -6,7 +6,7 @@ import com.jakchang.tdd_study.data.local.ShoppingItem
 import com.jakchang.tdd_study.data.remote.response.ImageResponse
 import com.jakchang.tdd_study.other.Resource
 
-class FakeShoppingRepository: ShoppingRepository {
+class FakeShoppingRepository : ShoppingRepository {
     private val shoppingItems = mutableListOf<ShoppingItem>()
 
     private val observableShoppingItems = MutableLiveData<List<ShoppingItem>>(shoppingItems)
@@ -14,16 +14,16 @@ class FakeShoppingRepository: ShoppingRepository {
 
     private var shouldReturnNetworkError = false
 
-    fun setShouldNetworkError(value: Boolean){
+    fun setShouldNetworkError(value: Boolean) {
         shouldReturnNetworkError = value
     }
 
-    private fun refreshLiveData(){
+    private fun refreshLiveData() {
         observableShoppingItems.postValue(shoppingItems)
         observableTotalPrice.postValue(getTotalPrice())
     }
 
-    private fun getTotalPrice(): Float{
+    private fun getTotalPrice(): Float {
         return shoppingItems.sumByDouble { it.price.toDouble() }.toFloat()
     }
 
@@ -46,7 +46,7 @@ class FakeShoppingRepository: ShoppingRepository {
     }
 
     override suspend fun searchForImage(imageQuery: String): Resource<ImageResponse> {
-        return if(shouldReturnNetworkError) {
+        return if (shouldReturnNetworkError) {
             Resource.error("", null)
         } else {
             Resource.success(ImageResponse(listOf(), 0, 0))

@@ -11,8 +11,8 @@ import com.jakchang.tdd_study.other.Event
 import com.jakchang.tdd_study.other.Resource
 import com.jakchang.tdd_study.repository.ShoppingRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class ShoppingViewModel @Inject constructor(
@@ -57,7 +57,7 @@ class ShoppingViewModel @Inject constructor(
             )
             return
         }
-        if(name.length > Constant.MAX_NAME_LENGTH){
+        if (name.length > Constant.MAX_NAME_LENGTH) {
             _insertShoppingItemStatus.postValue(
                 Event(
                     Resource.error(
@@ -68,7 +68,7 @@ class ShoppingViewModel @Inject constructor(
             )
             return
         }
-        if(priceString.length > Constant.MAX_PRICE_LENGTH){
+        if (priceString.length > Constant.MAX_PRICE_LENGTH) {
             _insertShoppingItemStatus.postValue(
                 Event(
                     Resource.error(
@@ -81,11 +81,11 @@ class ShoppingViewModel @Inject constructor(
         }
         val amount = try {
             amountString.toInt()
-        } catch(e: Exception) {
+        } catch (e: Exception) {
             _insertShoppingItemStatus.postValue(Event(Resource.error("Please enter a valid amount", null)))
             return
         }
-        val shoppingItem =  ShoppingItem(
+        val shoppingItem = ShoppingItem(
             name,
             amount,
             priceString.toFloat(),
@@ -97,7 +97,7 @@ class ShoppingViewModel @Inject constructor(
     }
 
     fun searchForImage(imageQuery: String) {
-        if(imageQuery.isEmpty()){
+        if (imageQuery.isEmpty()) {
             return
         }
         _images.value = Event(Resource.loading(null))
@@ -107,16 +107,3 @@ class ShoppingViewModel @Inject constructor(
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

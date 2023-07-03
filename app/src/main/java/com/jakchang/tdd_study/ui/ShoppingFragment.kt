@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.jakchang.tdd_study.R
-import com.jakchang.tdd_study.data.local.ShoppingItem
 import kotlinx.android.synthetic.main.fragment_shopping.*
 
 class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
