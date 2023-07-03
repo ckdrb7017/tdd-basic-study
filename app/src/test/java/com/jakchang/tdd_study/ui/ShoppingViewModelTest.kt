@@ -84,8 +84,4 @@ class ShoppingViewModelTest {
         assertThat(value.getContentIfNotHandled()?.status).isEqualTo(Status.SUCCESS)
     }
 
-    @Test
-    fun failureTest() {
-        assertThat(false).isTrue()
-    }
 }
